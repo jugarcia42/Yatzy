@@ -8,7 +8,7 @@ public class FullHouseBehavior implements ScoreInterface{
         int bestPair = findBestPair(counts);
         int pairCount = countPairCount(counts);
 
-        int Pair = computeScore(bestPair, pairCount);
+        int Pair = computePairScore(bestPair, pairCount);
         int ThreeOfAKind = computeThreeOfAKindScore(counts);
 
         if (Pair > 0 && ThreeOfAKind > 0){
@@ -51,7 +51,7 @@ public class FullHouseBehavior implements ScoreInterface{
         return pairCount;
     }
 
-    private int computeScore(int bestPair, int pairCount) {
+    private int computePairScore(int bestPair, int pairCount) {
         if (pairCount > 0) {
             return bestPair * 2;
         }
